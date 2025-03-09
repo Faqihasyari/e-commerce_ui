@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "nama": "Evening Dress",
+        "merek": "Dorothy Perkins",
+        "harga_asli": 15,
+        "harga_diskon": 12,
+        "diskon": 20,
+        "rating": 5,
+        "jumlah_ulasan": 10,
+        "gambar": "assets/images/models1.png"
+    },
+    {
+        "id": 2,
+        "nama": "Sport Dress",
+        "merek": "Sitlly",
+        "harga_asli": 22,
+        "harga_diskon": 19,
+        "diskon": 15,
+        "rating": 5,
+        "jumlah_ulasan": 10,
+        "gambar": "assets/images/models2.png"
+    },
+    {
+        "id": 3,
+        "nama": "Sport Dress",
+        "merek": "Dorothy Perkins",
+        "harga_asli": 14,
+        "harga_diskon": 12,
+        "diskon": 20,
+        "rating": 5,
+        "jumlah_ulasan": 10,
+        "gambar": "assets/images/models3.png"
+    }
+]
