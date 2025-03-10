@@ -21,7 +21,7 @@ class HomeController extends GetxController {
           diskon: 20,
           rating: 5,
           jumlahUlasan: 10,
-          gambar: "assets/evening_dress.jpg"),
+          gambar: "assets/images/models1.png"),
       Dress(
           id: 2,
           nama: "Sport Dress",
@@ -31,7 +31,17 @@ class HomeController extends GetxController {
           diskon: 15,
           rating: 5,
           jumlahUlasan: 10,
-          gambar: "assets/sport_dress.jpg"),
+          gambar: "assets/images/models2.png"),
+          Dress(
+          id: 3,
+          nama: "Sport Dress",
+          merek: "Dorothy Perkins",
+          hargaAsli: 14,
+          hargaDiskon: 12,
+          diskon: 20,
+          rating: 5,
+          jumlahUlasan: 10,
+          gambar: "assets/images/models3.png"),
     ];
 
     dressList.assignAll(data); 
