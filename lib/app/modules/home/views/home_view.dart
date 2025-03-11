@@ -77,17 +77,39 @@ class HomeView extends GetView<HomeController> {
                       padding: EdgeInsets.all(8),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              dress.gambar ?? '',
-                              width: Get.width * 0.4,
-                              height: Get.height * 0.3,
-                              fit: BoxFit.cover,
+                        child: Stack(children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                dress.gambar ?? '',
+                                width: Get.width * 0.4,
+                                height: Get.height * 0.3,
+                                fit: BoxFit.cover,
+                              ),
+                              Text(
+                                '${dress.nama}',
+                                // textAlign: TextAlign.,
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 40,
+                              decoration: BoxDecoration(
+                                  color: discount,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(40))),
+                              child: Text(
+                                '-${dress.diskon}',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.metrophobic(
+                                    color: text, fontWeight: FontWeight.w600),
+                              ),
                             ),
-                            Text(dress.nama ?? "No Name"),
-                          ],
-                        ),
+                          ),
+                        ]),
                       ),
                     );
                   },
