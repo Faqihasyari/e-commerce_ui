@@ -75,42 +75,114 @@ class HomeView extends GetView<HomeController> {
                     var dress = controller.dressList[index];
                     return Padding(
                       padding: EdgeInsets.all(8),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Stack(children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Image.asset(
+                      child: Stack(children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                              child: Image.asset(
                                 dress.gambar ?? '',
                                 width: Get.width * 0.4,
-                                height: Get.height * 0.3,
+                                height: Get.height * 0.25,
                                 fit: BoxFit.cover,
                               ),
-                              Text(
-                                '${dress.nama}',
-                                // textAlign: TextAlign.,
+                            ),
+                            Row(
+                              children: [
+                                ...List.generate(
+                                  dress.rating ?? 0,
+                                  (index) => Icon(
+                                    Icons.star,
+                                    color: star,
+                                    size: 18,
+                                  ),
+                                ),
+                                Text(
+                                  '(${dress.jumlahUlasan})',
+                                  style: TextStyle(
+                                      fontSize: 12, color: littleText),
+                                )
+                              ],
+                            ),
+                            Text(
+                              '${dress.merek}',
+                              style: TextStyle(fontSize: 12, color: littleText),
+                            ),
+                            Text(
+                              '${dress.nama}',
+                              style: TextStyle(
+                                fontSize: 19,
+                                fontWeight: FontWeight.bold,
                               ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              width: 40,
-                              decoration: BoxDecoration(
-                                  color: discount,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(40))),
+                              // textAlign: TextAlign.,
+                            ),
+                            Row(
+                              spacing: 3,
+                              children: [
+                                Text(
+                                  '${dress.hargaAsli}\$',
+                                  style: TextStyle(
+                                      color: littleText,
+                                      decoration: TextDecoration.lineThrough,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                Text(
+                                  '${dress.hargaDiskon}\$',
+                                  style: TextStyle(
+                                      color: discount,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Container(
+                            width: Get.width * 0.12,
+                            height: Get.width * 0.06,
+                            decoration: BoxDecoration(
+                                color: discount,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(40))),
+                            child: Center(
                               child: Text(
-                                '-${dress.diskon}',
+                                '-${dress.diskon}%',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.metrophobic(
-                                    color: text, fontWeight: FontWeight.w600),
+                                    color: text,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12),
                               ),
                             ),
                           ),
-                        ]),
-                      ),
+                        ),
+                        Positioned(
+                            left: 117,
+                            top: 170,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: littleText.withOpacity(0.3),
+                                    blurRadius: 5,
+                                    offset: Offset(0, 5),
+                                  ),
+                                ],
+                              ),
+                              child: CircleAvatar(
+                                backgroundColor: text,
+                                child: Icon(
+                                  Icons.favorite_border,
+                                  size: 18,
+                                  color: littleText,
+                                ),
+                              ),
+                            ))
+                      ]),
                     );
                   },
                 ),
