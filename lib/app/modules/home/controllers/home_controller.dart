@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   var dressList = <Dress>[].obs; 
+  var isFavorite = false.obs;
 
   @override
   void onInit() {
@@ -32,7 +33,7 @@ class HomeController extends GetxController {
           rating: 5,
           jumlahUlasan: 10,
           gambar: "assets/images/models2.png"),
-          Dress(
+      Dress(
           id: 3,
           nama: "Sport Dress",
           merek: "Dorothy Perkins",
@@ -46,4 +47,11 @@ class HomeController extends GetxController {
 
     dressList.assignAll(data); 
   }
+
+  void toggleFavorite(int id) {
+  var index = dressList.indexWhere((dress) => dress.id == id);
+  if (index != -1) {
+    dressList[index].isFavorite.value = !dressList[index].isFavorite.value;
+  }
+}
 }

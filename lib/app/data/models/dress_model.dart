@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 class Dress {
   int? id;
   String? nama;
@@ -8,9 +10,11 @@ class Dress {
   int? rating;
   int? jumlahUlasan;
   String? gambar;
+  var isFavorite = false.obs;
 
   Dress(
-      {this.id,
+      {
+        this.id,
       this.nama,
       this.merek,
       this.hargaAsli,

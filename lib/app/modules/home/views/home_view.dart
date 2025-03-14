@@ -174,13 +174,24 @@ class HomeView extends GetView<HomeController> {
                                 ],
                               ),
                               child: CircleAvatar(
-                                backgroundColor: text,
-                                child: Icon(
-                                  Icons.favorite_border,
-                                  size: 18,
-                                  color: littleText,
-                                ),
-                              ),
+                                  backgroundColor: text,
+                                  child: Obx(() {
+                                    var dress = controller.dressList[index];
+                                    return IconButton(
+                                      icon: Icon(
+                                        dress.isFavorite.value
+                                            ? Icons.favorite
+                                            : Icons.favorite_border,
+                                        color: dress.isFavorite.value
+                                            ? discount
+                                            : littleText,
+                                        size: 18,
+                                      ),
+                                      onPressed: () =>
+                                          controller.toggleFavorite(
+                                              dress.id?.toInt() ?? 0),
+                                    );
+                                  })),
                             ))
                       ]),
                     );
