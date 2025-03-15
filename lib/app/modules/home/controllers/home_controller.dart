@@ -1,14 +1,17 @@
 import 'package:ecommerce_ui/app/data/models/dress_model.dart';
+import 'package:ecommerce_ui/app/data/models/new_model.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   var dressList = <Dress>[].obs; 
+  var newList = <New>[].obs;
   var isFavorite = false.obs;
 
   @override
   void onInit() {
     super.onInit();
     fetchDresses();
+    fetchNew();
   }
 
   void fetchDresses() {
@@ -46,6 +49,41 @@ class HomeController extends GetxController {
     ];
 
     dressList.assignAll(data); 
+  }
+  void fetchNew(){
+    var data = [
+      New(
+        id: 1,
+        nama: "Blouse",
+        merek: "OVS",
+        harga: 30,
+        desc: "New",
+        rating: 0,
+        jumlahUlasan: 0,
+        gambar: "assets/images/blouse.jpg"
+      ),
+      New(
+        id: 2,
+        nama: "T-shirt Sailing",
+        merek: "Mango Boy",
+        harga: 10,
+        desc: "New",
+        rating: 0,
+        jumlahUlasan: 0,
+        gambar: "assets/images/tshirt.jpg"
+      ),
+      New(
+        id: 3,
+        nama: "Jeans",
+        merek: "Cool",
+        harga: 45,
+        desc: "New",
+        rating: 0,
+        jumlahUlasan: 0,
+        gambar: "assets/images/jeans.jpg"
+      )
+    ];
+    newList.assignAll(data);
   }
 
   void toggleFavorite(int id) {

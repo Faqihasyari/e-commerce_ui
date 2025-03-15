@@ -1,0 +1,32 @@
+[
+    {
+        "id" : 1,
+        "nama": "Blouse",
+        "merek": "OVS",
+        "harga": 30,
+        "desc": "New",
+        "rating" : 0, 
+        "jumlah_ulasan": 0,
+        "gambar": "assets/images/blouse.jpg"
+    },
+    {
+        "id" : 2,
+        "nama": "T-shirt Sailing",
+        "merek": "Mango Boy",
+        "harga": 10,
+        "desc": "New",
+        "rating" : 0, 
+        "jumlah_ulasan": 0,
+        "gambar": "assets/images/tshirt.jpg"
+    },
+    {
+        "id" : 3,
+        "nama": "Jeans",
+        "merek": "Cool",
+        "harga": 45,
+        "desc": "New",
+        "rating" : 0, 
+        "jumlah_ulasan": 0,
+        "gambar": "assets/images/jeans.jpg"
+    }
+]
