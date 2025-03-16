@@ -217,7 +217,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                         Text(
                           "You've never seen it before!",
-                          style: GoogleFonts.metrophobic(color: littleText),
+                          style: GoogleFonts.metrophobic(color: littleText,fontSize: 12),
                         )
                       ],
                     ),
