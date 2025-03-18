@@ -305,10 +305,10 @@ class HomeView extends GetView<HomeController> {
                                     BorderRadius.all(Radius.circular(40))),
                             child: Center(
                               child: Text(
-                                '-${cihuy.desc}%',
+                                '${cihuy.desc}',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.metrophobic(
-                                    color: text,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.w600,
                                     fontSize: 12),
                               ),
