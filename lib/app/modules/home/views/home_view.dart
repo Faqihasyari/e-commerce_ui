@@ -1,4 +1,5 @@
 import 'package:ecommerce_ui/app/data/models/dress_model.dart';
+import 'package:ecommerce_ui/app/routes/app_pages.dart';
 import 'package:ecommerce_ui/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,13 @@ import 'package:google_fonts/google_fonts.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({super.key});
+  final HomeController controller = Get.put(HomeController());
+  final List<Widget> _pages = [
+    Center(child: Text('Home Page')),
+    Center(child: Text('Search Page')),
+    Center(child: Text('Profile Page')),
+  ];
+  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -217,7 +224,8 @@ class HomeView extends GetView<HomeController> {
                         ),
                         Text(
                           "You've never seen it before!",
-                          style: GoogleFonts.metrophobic(color: littleText,fontSize: 12),
+                          style: GoogleFonts.metrophobic(
+                              color: littleText, fontSize: 12),
                         )
                       ],
                     ),
@@ -332,20 +340,20 @@ class HomeView extends GetView<HomeController> {
                               child: CircleAvatar(
                                   backgroundColor: text,
                                   child: Obx(() {
-                                    var dress = controller.dressList[index];
+                                    var second = controller.newList[index];
                                     return IconButton(
                                       icon: Icon(
-                                        dress.isFavorite.value
+                                        second.isFavorite.value
                                             ? Icons.favorite
                                             : Icons.favorite_border,
-                                        color: dress.isFavorite.value
+                                        color: second.isFavorite.value
                                             ? discount
                                             : littleText,
                                         size: 18,
                                       ),
                                       onPressed: () =>
-                                          controller.toggleFavorite(
-                                              dress.id?.toInt() ?? 0),
+                                          controller.toggleFavorite2(
+                                              second.id?.toInt() ?? 0),
                                     );
                                   })),
                             ))
@@ -353,10 +361,28 @@ class HomeView extends GetView<HomeController> {
                     );
                   },
                 ),
-              )
+              ),
             ],
           ),
         ),
+        bottomNavigationBar: Obx(() => BottomNavigationBar(
+              currentIndex: controller.selectedIndex.value,
+              onTap: (index) {
+                if (index == 0) {
+                  Get.offNamed(Routes.HOME); // Pindah ke Home
+                } else if (index == 1) {
+                  Get.offNamed(Routes.SHOP); // Pindah ke Search
+                } else if (index == 2) {
+                  Get.offNamed('/profile'); // Pindah ke Profile
+                }
+              },
+              items: [
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Shop'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.shopping_bag), label: 'Bag'),
+              ],
+            )),
       ),
     );
   }

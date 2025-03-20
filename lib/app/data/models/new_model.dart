@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 class New {
   int? id;
   String? nama;
@@ -7,6 +9,8 @@ class New {
   int? rating;
   int? jumlahUlasan;
   String? gambar;
+  var isFavorite = false.obs;
+
 
   New(
       {this.id,

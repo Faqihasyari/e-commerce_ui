@@ -6,6 +6,7 @@ class HomeController extends GetxController {
   var dressList = <Dress>[].obs; 
   var newList = <New>[].obs;
   var isFavorite = false.obs;
+  var selectedIndex = 0.obs;
 
   @override
   void onInit() {
@@ -92,4 +93,15 @@ class HomeController extends GetxController {
     dressList[index].isFavorite.value = !dressList[index].isFavorite.value;
   }
 }
+
+void toggleFavorite2(int id) {
+  var index = newList.indexWhere((dress) => dress.id == id);
+  if (index != -1) {
+    newList[index].isFavorite.value = !newList[index].isFavorite.value;
+  }
+}
+
+void changeIndex(int index) {
+    selectedIndex.value = index;
+  }
 }
