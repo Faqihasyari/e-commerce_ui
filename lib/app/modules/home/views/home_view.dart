@@ -369,18 +369,29 @@ class HomeView extends GetView<HomeController> {
               currentIndex: controller.selectedIndex.value,
               onTap: (index) {
                 if (index == 0) {
-                  Get.offNamed(Routes.HOME); // Pindah ke Home
+                  Get.offNamed(Routes.HOME); 
                 } else if (index == 1) {
-                  Get.offNamed(Routes.SHOP); // Pindah ke Search
+                  Get.offNamed(Routes.SHOP); 
                 } else if (index == 2) {
-                  Get.offNamed('/profile'); // Pindah ke Profile
+                  Get.offNamed('/profile'); 
+                } else if (index == 3) {
+                  Get.offNamed('/profile'); 
+                } else if (index == 4) {
+                  Get.offNamed('/profile'); 
+                } else if (index == 5) {
+                  Get.offNamed('/profile'); 
                 }
               },
+              selectedItemColor: Colors.blue, 
+              unselectedItemColor: Colors.grey, 
+              backgroundColor: Colors.white, 
               items: [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
                 BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Shop'),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.shopping_bag), label: 'Bag'),
+                    icon: Icon(Icons.favorite), label: 'Favorite'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.account_box), label: 'Profile'),
               ],
             )),
       ),
