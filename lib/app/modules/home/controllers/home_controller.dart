@@ -59,7 +59,7 @@ class HomeController extends GetxController {
         merek: "OVS",
         harga: 30,
         desc: "New",
-        rating: 0,
+        rating: 5,
         jumlahUlasan: 0,
         gambar: "assets/images/blouse.jpg"
       ),
@@ -69,7 +69,7 @@ class HomeController extends GetxController {
         merek: "Mango Boy",
         harga: 10,
         desc: "New",
-        rating: 0,
+        rating: 5,
         jumlahUlasan: 0,
         gambar: "assets/images/tshirt.jpg"
       ),
@@ -79,7 +79,7 @@ class HomeController extends GetxController {
         merek: "Cool",
         harga: 45,
         desc: "New",
-        rating: 0,
+        rating: 5,
         jumlahUlasan: 0,
         gambar: "assets/images/jeans.jpg"
       )

@@ -9,12 +9,6 @@ import 'package:google_fonts/google_fonts.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  final HomeController controller = Get.put(HomeController());
-  final List<Widget> _pages = [
-    Center(child: Text('Home Page')),
-    Center(child: Text('Search Page')),
-    Center(child: Text('Profile Page')),
-  ];
   HomeView({super.key});
 
   @override
@@ -76,7 +70,7 @@ class HomeView extends GetView<HomeController> {
               ),
               Obx(() {
                 return SizedBox(
-                  height: Get.height * 0.4,
+                  height: Get.height * 0.38,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: controller.dressList.length,
@@ -260,13 +254,16 @@ class HomeView extends GetView<HomeController> {
                                 fit: BoxFit.cover,
                               ),
                             ),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               children: [
                                 ...List.generate(
                                   cihuy.rating ?? 0,
                                   (index) => Icon(
-                                    Icons.star,
-                                    color: star,
+                                    Icons.star_border,
+                                    color: littleText,
                                     size: 18,
                                   ),
                                 ),
@@ -294,8 +291,7 @@ class HomeView extends GetView<HomeController> {
                                 Text(
                                   '${cihuy.harga}\$',
                                   style: TextStyle(
-                                      color: littleText,
-                                      decoration: TextDecoration.lineThrough,
+                                      color: Colors.black,
                                       fontWeight: FontWeight.w600),
                                 ),
                               ],
@@ -308,7 +304,7 @@ class HomeView extends GetView<HomeController> {
                             width: Get.width * 0.12,
                             height: Get.width * 0.06,
                             decoration: BoxDecoration(
-                                color: discount,
+                                color: Colors.black,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(40))),
                             child: Center(
@@ -316,9 +312,9 @@ class HomeView extends GetView<HomeController> {
                                 '${cihuy.desc}',
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.metrophobic(
-                                    color: Colors.black,
+                                    color: text,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 12),
+                                    fontSize: 14),
                               ),
                             ),
                           ),
@@ -369,22 +365,22 @@ class HomeView extends GetView<HomeController> {
               currentIndex: controller.selectedIndex.value,
               onTap: (index) {
                 if (index == 0) {
-                  Get.offNamed(Routes.HOME); 
+                  Get.offNamed(Routes.HOME);
                 } else if (index == 1) {
-                  Get.offNamed(Routes.SHOP); 
+                  Get.offNamed(Routes.SHOP);
                 } else if (index == 2) {
-                  Get.offNamed('/profile'); 
+                  Get.offNamed('/profile');
                 } else if (index == 3) {
-                  Get.offNamed('/profile'); 
+                  Get.offNamed('/profile');
                 } else if (index == 4) {
-                  Get.offNamed('/profile'); 
+                  Get.offNamed('/profile');
                 } else if (index == 5) {
-                  Get.offNamed('/profile'); 
+                  Get.offNamed('/profile');
                 }
               },
-              selectedItemColor: Colors.blue, 
-              unselectedItemColor: Colors.grey, 
-              backgroundColor: Colors.white, 
+              selectedItemColor: Colors.blue,
+              unselectedItemColor: Colors.grey,
+              backgroundColor: Colors.white,
               items: [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
                 BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Shop'),
