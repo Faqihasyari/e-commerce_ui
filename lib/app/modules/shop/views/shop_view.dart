@@ -16,10 +16,10 @@ class ShopView extends GetView<ShopController> {
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.2), // Warna shadow
-                  blurRadius: 15, // Membuat shadow lebih lembut
-                  spreadRadius: 1, // Membuat shadow lebih menyebar
-                  offset: Offset(0, 2), // Arah bayangan ke bawah
+                  color: Colors.black.withOpacity(0.2),  
+                  blurRadius: 15,  
+                  spreadRadius: 1,  
+                  offset: Offset(0, 2),  
                 ),
               ],
             ),

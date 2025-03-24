@@ -313,8 +313,8 @@ class HomeView extends GetView<HomeController> {
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.metrophobic(
                                     color: text,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14),
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16),
                               ),
                             ),
                           ),
