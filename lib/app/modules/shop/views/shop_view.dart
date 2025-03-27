@@ -1,3 +1,4 @@
+import 'package:ecommerce_ui/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -16,10 +17,10 @@ class ShopView extends GetView<ShopController> {
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.2),  
-                  blurRadius: 15,  
-                  spreadRadius: 1,  
-                  offset: Offset(0, 2),  
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 15,
+                  spreadRadius: 1,
+                  offset: Offset(0, 2),
                 ),
               ],
             ),
@@ -34,11 +35,30 @@ class ShopView extends GetView<ShopController> {
               backgroundColor: Colors.white, // Bisa diganti sesuai tema
             ),
           ),
-          Expanded(
-            child: Center(
-              child: Text(
-                'ShopView is working',
-                style: TextStyle(fontSize: 20),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  color: discount, borderRadius: BorderRadius.circular(10)),
+              width: double.infinity,
+              height: 100,
+              child: Column(
+                spacing: 3,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'SUMMER SALES',
+                    style: GoogleFonts.metrophobic(
+                        fontSize: 20, color: text, fontWeight: FontWeight.w800),
+                  ),
+                  Text(
+                    'Up to 50% off',
+                    style: GoogleFonts.metrophobic(
+                      color: text,
+                    ),
+                  )
+                ],
               ),
             ),
           ),
