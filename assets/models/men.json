@@ -1,0 +1,25 @@
+[
+    {
+        "id" : 1,
+        "name" : "New",
+        "img" : "assets/images/categories/kategori1.jpeg"
+    },
+
+    {
+        "id" : 2,
+        "name" : "Clothes",
+        "img" : "assets/images/categories/kategori2.jpg"
+    },
+
+    {
+        "id" : 3,
+        "name" : "Shoes",
+        "img" : "assets/images/categories/kategori3.jpg"
+    },
+
+    {
+        "id" : 4,
+        "name" : "New",
+        "img" : "assets/images/categories/kategori4.jpg"
+    }
+]

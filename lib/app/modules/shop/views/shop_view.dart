@@ -12,7 +12,6 @@ class ShopView extends GetView<ShopController> {
     return Scaffold(
       body: Column(
         children: [
-          // Membuat AppBar dengan shadow yang memiliki spread & blur
           Container(
             decoration: BoxDecoration(
               boxShadow: [
@@ -25,14 +24,25 @@ class ShopView extends GetView<ShopController> {
               ],
             ),
             child: AppBar(
-              elevation: 0, // Matikan elevation bawaan
-              shadowColor: Colors.transparent, // Hilangkan shadow bawaan
+              elevation: 0,
+              shadowColor: Colors.transparent,
               title: Text(
                 'Categories',
                 style: GoogleFonts.metrophobic(fontWeight: FontWeight.w600),
               ),
               centerTitle: true,
-              backgroundColor: Colors.white, // Bisa diganti sesuai tema
+              backgroundColor: Colors.white,
+              leading: IconButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  icon: Icon(Icons.arrow_back_ios)),
+              actions: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(Icons.search),
+                )
+              ],
             ),
           ),
           Padding(
@@ -57,11 +67,46 @@ class ShopView extends GetView<ShopController> {
                     style: GoogleFonts.metrophobic(
                       color: text,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
           ),
+          Flexible(
+            child: ListView.builder(
+              itemCount: 2,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 100,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10), color: text),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('New'),
+                        ),
+                        Spacer(),
+                        ClipRRect(
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(10),
+                              bottomRight: Radius.circular(10)),
+                          child: Image.asset(
+                            'assets/images/categories/kategori1.jpeg',
+                            width: Get.width / 2,
+                            fit: BoxFit.cover,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          )
         ],
       ),
     );
