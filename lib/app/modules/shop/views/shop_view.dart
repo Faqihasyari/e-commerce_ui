@@ -11,6 +11,7 @@ class ShopView extends GetView<ShopController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -46,7 +47,7 @@ class ShopView extends GetView<ShopController> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(10),
             child: Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
@@ -72,36 +73,47 @@ class ShopView extends GetView<ShopController> {
               ),
             ),
           ),
-          Flexible(
+          Expanded(
             child: ListView.builder(
-              itemCount: 2,
+              padding: EdgeInsets.zero,
+              itemCount: controller.shopList.length,
               itemBuilder: (context, index) {
+                var man = controller.shopList[index];
                 return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 100,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10), color: text),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text('New'),
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: text),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Text(
+                                '${man.name}',
+                                style: GoogleFonts.metrophobic(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                            ),
+                            Spacer(),
+                            ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10),
+                                  bottomRight: Radius.circular(10)),
+                              child: Image.asset(
+                                '${man.img}',
+                                width: Get.width / 2,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                          ],
                         ),
-                        Spacer(),
-                        ClipRRect(
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10),
-                              bottomRight: Radius.circular(10)),
-                          child: Image.asset(
-                            'assets/images/categories/kategori1.jpeg',
-                            width: Get.width / 2,
-                            fit: BoxFit.cover,
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 );
               },

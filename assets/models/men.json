@@ -1,25 +1,28 @@
 [
+    
+    
+
     {
-        "id" : 1,
+        "id" : 2,
         "name" : "New",
         "img" : "assets/images/categories/kategori1.jpeg"
     },
 
     {
-        "id" : 2,
+        "id" : 3,
         "name" : "Clothes",
         "img" : "assets/images/categories/kategori2.jpg"
     },
 
     {
-        "id" : 3,
+        "id" : 4,
         "name" : "Shoes",
         "img" : "assets/images/categories/kategori3.jpg"
     },
 
     {
-        "id" : 4,
-        "name" : "New",
+        "id" : 5,
+        "name" : "Accesories",
         "img" : "assets/images/categories/kategori4.jpg"
     }
 ]
