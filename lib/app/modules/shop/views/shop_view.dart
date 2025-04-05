@@ -1,3 +1,4 @@
+import 'package:ecommerce_ui/app/routes/app_pages.dart';
 import 'package:ecommerce_ui/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -43,6 +44,24 @@ class ShopView extends GetView<ShopController> {
                   padding: const EdgeInsets.all(8.0),
                   child: Icon(Icons.search),
                 )
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            height: Get.height * 0.05,
+            color: Colors.transparent,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  'Women',
+                  style: GoogleFonts.metrophobic(fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'Men',
+                ),
+                Text('Kids'),
               ],
             ),
           ),
@@ -121,6 +140,35 @@ class ShopView extends GetView<ShopController> {
           )
         ],
       ),
+      bottomNavigationBar: Obx(() => BottomNavigationBar(
+            currentIndex: controller.selectedIndex.value,
+            onTap: (index) {
+              if (index == 0) {
+                Get.offNamed(Routes.HOME);
+              } else if (index == 1) {
+                Get.offNamed(Routes.SHOP);
+              } else if (index == 2) {
+                Get.offNamed('/profile');
+              } else if (index == 3) {
+                Get.offNamed('/profile');
+              } else if (index == 4) {
+                Get.offNamed('/profile');
+              } else if (index == 5) {
+                Get.offNamed('/profile');
+              }
+            },
+            selectedItemColor: Colors.blue,
+            unselectedItemColor: Colors.grey,
+            backgroundColor: Colors.white,
+            items: [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+              BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Shop'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.favorite), label: 'Favorite'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.account_box), label: 'Profile'),
+            ],
+          )),
     );
   }
 }
