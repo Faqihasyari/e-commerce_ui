@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../controllers/shop_controller.dart';
 
 class ShopView extends GetView<ShopController> {
+  final tabs = ['Women', 'Men', 'Kids'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,22 +48,45 @@ class ShopView extends GetView<ShopController> {
               ],
             ),
           ),
-          Container(
-            width: double.infinity,
-            height: Get.height * 0.05,
-            color: Colors.transparent,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  'Women',
-                  style: GoogleFonts.metrophobic(fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  'Men',
-                ),
-                Text('Kids'),
-              ],
+          Obx(
+            () => Container(
+              width: double.infinity,
+              height: Get.height * 0.05,
+              color: Colors.transparent,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ...List.generate(tabs.length, (index) {
+                    final isSelected =
+                        controller.selectedPlusIndex.value == index;
+
+                    return GestureDetector(
+                      onTap: () => controller.changeTab(index),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            tabs[index],
+                            style: GoogleFonts.metrophobic(
+                              fontSize: 16,
+                              fontWeight: isSelected
+                                  ? FontWeight.bold
+                                  : FontWeight.normal,
+                              color: Colors.black,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          Container(
+                            height: 3,
+                            width: Get.width * 0.25,
+                            color: isSelected ? Colors.red : Colors.transparent,
+                          ),
+                        ],
+                      ),
+                    );
+                  })
+                ],
+              ),
             ),
           ),
           Padding(
