@@ -1,4 +1,5 @@
 # ecommerce_ui
+#seriusan ini mah
 #demi keberlangsungan
 # ijo coyyy
 A new Flutter project.
