@@ -8,7 +8,6 @@
 
 
 #ecommerce ui
-#go green
 #my first ecommerce ui
 A new Flutter project.
 
