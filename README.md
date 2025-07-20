@@ -6,7 +6,7 @@
 # demi keberlangsungan
 # ijo coyyy
 
-#yes
+
 #ecommerce ui
 #go green
 #my first ecommerce ui
