@@ -5,7 +5,8 @@
 # biar terus ijo
 # demi keberlangsungan
 # ijo coyyy
-#yessir
+
+#yes
 #ecommerce ui
 #go green
 #my first ecommerce ui
