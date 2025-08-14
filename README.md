@@ -1,6 +1,5 @@
 # ecommerce_ui
 # seriusan ini mah
-# biar terus ijo
 # demi keberlangsungan
 # ijo coyyy
 
