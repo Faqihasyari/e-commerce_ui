@@ -1,5 +1,4 @@
 # ecommerce_ui
-# ijo coyyy
 
 
 #ecommerce ui
