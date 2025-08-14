@@ -1,5 +1,4 @@
 # ecommerce_ui
-# demi keberlangsungan
 # ijo coyyy
 
 
